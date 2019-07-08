@@ -15,8 +15,6 @@ args = parser.parse_args()
 start_time = datetime.datetime.now()
 print("started at: " + str(start_time))
 
-#gunzip files
-
 with open(args.fq, "rU") as handle:
     """split fastq file name into its parts"""
     fq_name, fq_ext = os.path.splitext(args.fq)
@@ -34,17 +32,12 @@ with open(args.fq, "rU") as handle:
 
         """Make sequence uppercase"""
         record.seq = record.seq.upper()
-        #fq_header = "@" + record.description
 
         """Assign variables for filter"""
         record.seq = record.seq.upper()
         mC_count = record.seq.count("C")
         N_count = len(record.seq)
         mC_persistence = float(mC_count / N_count)
-        #print(fq_header)
-        #print(mate_id, record.seq, ":", mC_persistence, "-", mC_count,"/",N_count)
-        #print(record.description[])
-        #print(record.format("fastq"))
 
         """define filter and print to file"""
         new_fq_name = fq_name + "_filtered" + fq_ext
@@ -57,10 +50,6 @@ with open(args.fq, "rU") as handle:
 with open(new_fq_name, 'r') as filtered_fq:
     read_count2 = len(list(SeqIO.parse(filtered_fq, "fastq")))
     print("Found %i records in %s" % (read_count2, new_fq_name))
-
-
-#gzip files
-
 
 end_time = datetime.datetime.now()
 print("finished at: " + str(end_time))
