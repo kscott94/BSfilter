@@ -3,7 +3,7 @@
 import argparse
 import os
 import datetime
-from Bio import SeqIO
+from Bio import SeqIO   #pacakge from biopython
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-fq', type=str) # path/to/fastq/file
