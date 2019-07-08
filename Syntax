@@ -1,4 +1,4 @@
-# BSfilter can be run from the command line.
+BSfilter can be run from the command line using hte following syntax:
 
 python3 BSfilter.py -fq <path/to/fastq/file> [-options]
 
