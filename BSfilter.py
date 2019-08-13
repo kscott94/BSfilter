@@ -12,6 +12,7 @@ parser.add_argument('--count', type=int, default=1000)  # methyl cytosine count 
 
 args = parser.parse_args()
 
+print('BSfilter version 1.0\n')
 start_time = datetime.datetime.now()
 print("started at: " + str(start_time))
 
@@ -22,13 +23,6 @@ with open(args.fq, "rU") as handle:
     """print basic information about fastq file"""
     read_count = len(list(SeqIO.parse(args.fq, "fastq")))
     print("Found %i records in %s" % (read_count, args.fq))
-
-    for record in SeqIO.parse(handle, "fastq"):
-        """split fastq record descriptions into their parts"""
-        M01193_1, M01193_2, ninezeros, oneone, elevenohone,tenthousand, mate, N, zero, somesequence = record.description.split(':')
-        mate_num, mate_pair = mate.split(" ")
-        mate_id = mate_num + "/" + mate_pair
-        #print(mate_id)
 
         """Make sequence uppercase"""
         record.seq = record.seq.upper()
