@@ -9,6 +9,7 @@ BSfilter can be run from the command line using the following syntax:
 python3 BSfilter.py -fq <path/to/fastq/file> [-options]
 
 options:
+
 -fq <string>    path/to/fastq/file.
 
 -mC <float>    max frequency of Cytosines per read allowed through filter. Default is 1.0
