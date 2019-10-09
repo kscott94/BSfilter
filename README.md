@@ -1,8 +1,8 @@
-### BSfilter is a python3 script that takes at lease one argument and at most 3 arguments.
+### BSfilter is a python3 script that takes at lease one argument and at most 3 arguments. Its purpose is to parse through a fastq file and output a fastq file that contain reads with a specified frequency and/or count of Cytosines per read. Note: if the genome contains multiple chromosomes, split chromosomes into separate files. Additionally, remove fasta header.
 
-### Its purpose is to parse through a fastq file and output a fastq file that contain reads with a specified frequency and/or count of Cytosines per read.
-
-This python script uses python3 and the libary biopython 1.74
+Software:
+python 3.7.3
+biopython 1.74
 
 BSfilter can be run from a unix-based commandline using the following syntax:
 
