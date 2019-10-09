@@ -10,11 +10,11 @@ python3 BSfilter.py -fq <path/to/fastq/file> [-options]
 
 ### options:
 
--fq <string>    path/to/fastq/file.
+-fq \<string\>\   path/to/fastq/file.
 
--mC <float>    max frequency of Cytosines per read allowed through filter. Default is 1.0
+-mC \<float\>    max frequency of Cytosines per read allowed through filter. Default is 1.0
 
---count <integer>    max number of Cytosones per read allowed through filter. Default is 1000
+--count \<integer\>    max number of Cytosones per read allowed through filter. Default is 1000
   
   
   
