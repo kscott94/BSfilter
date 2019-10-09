@@ -20,5 +20,3 @@ python3 BSfilter.py -fq <path/to/fastq/file> [-options]
   
   
 ### BSfilter was desinged based on my need to filter out non-bisulfite-converted transcripts from fastq files. Hyperthermophilic organisms require very harsh bisulfite conversion conditions. These conditions will lead to complete conversion of spike in transcripts, making it impossible to deduce a non-conversion rates. One solution is to remove reads from fastq files that have a higher than expected frequency of Cytosines (methylation calls). Although Bisulfite-seq mapping tools allow you to tag reads with a specified cytosine frequency and eliminate them from downstream analysis, BSfilter allows you to optimize methylation threshholds via visual inspection in a genome browser.
-
-file:///home/kristin/Documents/filter_picture.png
