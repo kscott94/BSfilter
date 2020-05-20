@@ -1,4 +1,4 @@
-### BSfilter is a python3 script that takes at lease one argument and at most 3 arguments. Its purpose is to parse through a fastq file and output a fastq file that contain reads with a specified frequency and/or count of Cytosines per read. 
+### BSfilter is a commandline-interfaceded python3 script that takes at lease one argument and at most 3 arguments. Its purpose is to parse through a fastq file and output a fastq file that contains reads with a specified frequency and/or count of Cytosines per read. 
 
 Software:
 * python 3.7.3
