@@ -8,7 +8,7 @@ from Bio import SeqIO   #pacakge from biopython
 parser = argparse.ArgumentParser()
 parser.add_argument('-fq', type=str) # path/to/fastq/file
 parser.add_argument('-mC', type=float, default=1.0)    # methyl cytosine frequency allowed per read
-parser.add_argument('--count', type=int, default=1000)  # methyl cytosine count allowed per read
+parser.add_argument('--count', type=int, default=1000000)  # methyl cytosine count allowed per read
 
 args = parser.parse_args()
 
