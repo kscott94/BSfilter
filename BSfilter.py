@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
 
 import argparse
-import os
 import datetime
-from Bio import SeqIO   #pacakge from biopython
+import os
+from Bio import SeqIO
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-fq', type=str) # path/to/fastq/file
 parser.add_argument('-mC', type=float, default=1.0)    # methyl cytosine frequency allowed per read
-parser.add_argument('--count', type=int, default=1000000)  # methyl cytosine count allowed per read
+parser.add_argument('--count', type=int, default=1000)  # methyl cytosine count allowed per read
 
 args = parser.parse_args()
 
-print('BSfilter version 1.0\n')
 start_time = datetime.datetime.now()
 print("started at: " + str(start_time))
 
@@ -21,17 +20,20 @@ with open(args.fq, "rU") as handle:
     fq_name, fq_ext = os.path.splitext(args.fq)
 
     """print basic information about fastq file"""
-    read_count = len(list(SeqIO.parse(args.fq, "fastq")))
-    print("Found %i records in %s" % (read_count, args.fq))
+#    read_count = len(list(SeqIO.parse(args.fq, "fastq")))
+#    print("Found %i records in %s" % (read_count, args.fq))
+
+    for record in SeqIO.parse(handle, "fastq"):
 
         """Make sequence uppercase"""
         record.seq = record.seq.upper()
 
         """Assign variables for filter"""
-        record.seq = record.seq.upper()
+
         mC_count = record.seq.count("C")
         N_count = len(record.seq)
         mC_persistence = float(mC_count / N_count)
+
 
         """define filter and print to file"""
         new_fq_name = fq_name + "_filtered" + fq_ext
