@@ -2,7 +2,6 @@
 
 Software:
 * python 3.7.3
-* biopython 1.74
 
 BSfilter can be run from a unix-based commandline using the following syntax:
 
