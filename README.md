@@ -6,8 +6,9 @@ Software:
 BSfilter can be run from a unix-based commandline using the following syntax:
 
 python3 BSfilter.py -fq <path/to/fastq/file> [-options] \
-example: python3 BSfilter.py -fq ./reads.fastq -mC 0.05 \
-returns: see second panel in figure below
+example: \
+python3 BSfilter.py -fq ./reads.fastq -mC 0.05 \
+returns fastq file with non-converted reads (reads with high cytosine ratio) removed
 
 ### options:
 
